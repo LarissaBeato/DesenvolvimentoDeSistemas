@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploração Completa</title>
+</head>
+<body>
+    <header>
+        <h1>Exploração Completa de Tags HTML</h1>
+        <nav>
+            <ul>
+                <li><a href="#section1">Seção 1</a></li>
+                <li><a href="#section2">Seção 2</a></li>
+                <li><a href="#section3">Seção 3</a></li>
+                <li><a href="#section4">Seção 4</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="section1">
+            <h2>Cabeçalhos e Parágrafos</h2>
+            <h3>Subtítulo de nível 3</h3>
+            <p>Parágrafo com <b>texto em negrito</b>, <i>texto em itálico</i>, e <u>texto sublinhado</u>.</p>
+            <p>Parágrafo com <strong>importância forte</strong> e <em>ênfase</em>.</p>
+            <p><mark>marcador</mark> e <small>texto pequeno</small>.</p>
+            <p><sup>superíndice</sup> e <sub>subíndice</sub>.</p>
+            <p><ins>inserção</ins> e <del>deleção</del>.</p>
+            <p><code>código</code> e <pre>pré-formatado</pre></p>
+            <br>
+            <blockquote>
+                <p>Bloco de citação.</p>
+            </blockquote>
+            <q>Citação em linha.</q>
+            <hr>
+            <br>
+        </section>
+
+        <section id="section2">
+            <h2>Links e Imagens</h2>
+            <p><a href="" target="_blank">Link externo</a></p>
+            <p><a href="#section1">Link interno</a></p>
+
+            <figure>
+                <img src="img1.jpg" alt="Descrição da imagem" width="300" height="200">
+                <figcaption>Legenda da imagem</figcaption>
+            </figure>
+
+            <audio controls>
+                <source src="Victor & Leo - Fada.mp4" type="audio/mpeg">
+            </audio>
+
+            <video width="320" height="240" controls>
+                <source src="Victor & Leo - Fada.mp4" type="video/mp4">
+            </video>
+
+            <embed src="file.pdf" type="application/pdf" width="300" height="400">
+          
+
+        <section id="section3">
+            <h2>Tabelas</h2>
+            <table border="1">
+                <caption>Exemplo de Tabela</caption>
+                <thead>
+                    <tr>
+                        <th>Previsão</th>
+                        <th>Cidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Chuva</td>
+                        <td>Santa Catarina</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Sol</td>
+                        <td>Rio de Janeiro</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="section4">
+            <h2>Listas</h2>
+            <ul>
+                <li>Lista não ordenada1</li>
+                <li>Lista não ordenada2</li>
+            </ul>
+
+            <ol>
+                <li>Lista ordenada1</li>
+                <li>Lista ordenada 2</li>
+            </ol>
+
+            <dl>
+                <dt>Termo 1</dt>
+                <dd>Descrição do termo 1</dd>
+                <dt>Termo 2</dt>
+                <dd>Descrição do termo 2</dd>
+            </dl>
+        </section>
+
+        <section id="section5">
+            <h2>Formulários</h2>
+            <form action="/submit" method="post">
+                <fieldset>
+                    <legend>Informações do Usuário</legend>
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                    <br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <br>
+                    <label for="bio">Biografia:</label>
+                    <textarea id="bio" name="bio" rows="4" cols="50"></textarea>
+                    <br>
+                    <label for="gender">Gênero:</label>
+                    <select id="gender" name="gender">
+                        <optgroup label="Opções">
+                            <option value="male">Masculino</option>
+                            <option value="female">Feminino</option>
+                        </optgroup>
+                    </select>
+                    <br>
+                    <input type="submit" value="Enviar">
+                    <button type="reset">Resetar</button>
+                </fieldset>
+            </form>
+
+            <datalist id="dataList">
+                <option value="Opção 1">
+                <option value="Opção 2">
+            </datalist>
+
+            <output for="name">Saída</output>
+        </section>
+
+        <section id="section6">
+            <h2>Seções e Agrupamentos</h2>
+            <div>
+                <header>
+                    <h3>Teste Header</h3>
+                </header>
+                <article>
+                    <h4>Artigo</h4>
+                    <p>Teste Article</p>
+                </article>
+                <aside>
+                    <h4>Barra Lateral</h4>
+                    <p>Teste anside</p>
+                </aside>
+                <footer>
+                    <p>Teste footer</p>
+                </footer>
+            </div>
+
+            <details>
+                <summary>Mais detalhes</summary>
+                <p>Teste</p>
+            </details>
+        </section>
+
+        <section id="section7">
+            <h2>Elementos Semânticos e Scripts</h2>
+            <time datetime="2024-08-29">29 de agosto de 2024</time>
+            <br>
+            <progress value="70" max="100">70%</progress>
+            <br>
+            <meter value="0.6">60%</meter>
+            <br>
+            <canvas width="200" height="200" style="border:1px solid #000;">
+            </canvas>
+
+
+            <noscript>
+                <p>JavaScript não está habilitado no seu navegador.</p>
+            </noscript>
+        </section>
+
+        <section id="section8">
+            <h2>Mapa de Imagem e Template</h2>
+            <img src="img1.jpg" width="40%" >
+
+            <map name="mapa">
+                <area shape="rect" coords="34,44,270,350"alt="Exemplo">
+            </map>
+
+            <template id="my-template">
+            </template>
+        </section>
+    </main>
+
+    <footer>
+        <address>Contato: <a href="larissabonkoskibeato@gmail.com">larissabonkoskibeato@gmail.com</a></address>
+        <p>Exemplo de Página HTML</p>
+    </footer>
+</body>
+</html>
