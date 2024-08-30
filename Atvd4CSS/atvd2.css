@@ -1,0 +1,37 @@
+.background-blue-light {
+  background-color: lightblue;
+}
+
+.background-green-light {
+  background-color: lightgreen;
+}
+
+.background-image-repeat-fixed {
+  background-image: url('image.jpg');
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+.background-image-repeat-vertical {
+  background-image: url('image.jpg');
+  background-repeat: repeat-y;
+}
+
+.background-image-no-repeat {
+  background-image: url('image.jpg');
+  background-repeat: no-repeat;
+}
+
+.background-image-no-repeat-centered {
+  background-image: url('image.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.background-yellow-image {
+  background-color: yellow;
+  background-image: url('image.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+}

@@ -1,0 +1,26 @@
+
+#font1 {
+    font-family: Arial;
+    color: red;
+}
+
+#font2 {
+    font-family: Times;
+    font-size: 22px;
+    color: green;
+}
+
+#font3 {
+    font-family: Comic sans-serif;
+    font-size: 20px;
+    color: blue;
+    font-style: italic;
+}
+
+#font4 {
+    font-family: Verdana;
+    font-size: 14px;
+    color: yellow;
+    font-weight: bold;
+    font-stretch: normal;
+}
