@@ -1,0 +1,30 @@
+#containerGeral{
+    position: relative;
+    width: 800px;
+    height: auto;
+    border: 1px solid #000;
+    margin: 0 auto;
+
+}
+
+#cabecalho{
+    width: 800px;
+    height: 80px;
+    background-color: #06f;
+
+}
+
+#menu, #rodape{
+    width: 800px;
+    height: 30px;
+    background-color: #0f6;
+
+}
+
+#centro{
+    width: 800px;
+    height: 500px;
+    background-color: #00f;
+    top: 160px;
+    left: 80%;
+}

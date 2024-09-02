@@ -1,0 +1,40 @@
+#containerGeral{
+    position: relative;
+    width: 800px;
+    height: auto;
+    border: 1px solid #000;
+    margin: 0 auto;
+
+}
+
+#topo{
+    width: 800px;
+    height: 80px;
+    background-color: #0f6;
+
+}
+
+#rodape{
+    width: 800px;
+    height: 30px;
+    background-color: #0f6;
+    top: 100%;
+    position: absolute;
+
+}
+
+#conteudo{
+    width: 640px;
+    height: 500px;
+    background-color:aqua;
+    top: 80px;
+    left: 20%;
+    position: absolute;
+}
+
+#le{
+    width: 200px;
+    height: 500px;
+    background-color:#06f;
+
+}

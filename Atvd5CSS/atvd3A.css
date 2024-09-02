@@ -1,0 +1,69 @@
+#img1{
+    position: absolute;
+    left: 20%;
+    top: 35%;
+    display: flex;
+}
+
+#img2{
+    position: absolute;
+    left: 40%;
+    top: 35%;
+    display: flex;
+}
+
+#img3{
+    position: absolute;
+    left: 60%;
+    top: 35%;
+    display: flex;
+}
+
+#dicas{
+    position: absolute;
+    left: 0%;
+    top: 94%;
+    display: flex;
+
+}
+
+#dicas1{
+    position: absolute;
+    left: 0%;
+    top: 110%;
+    display: flex;
+
+}
+
+#doce{
+    position: absolute;
+    left: 0%;
+    top: 94%;
+    display: flex;
+
+}
+
+#doce1{
+    position: absolute;
+    left: 0%;
+    top: 110%;
+    display: flex;
+
+}
+
+#aprendaFazer{
+    position: absolute;
+    left: 0%;
+    top: 94%;
+    display: flex;
+
+}
+
+#aprendaFazer1{
+    position: absolute;
+    left: 0%;
+    top: 110%;
+    display: flex;
+
+}
+
