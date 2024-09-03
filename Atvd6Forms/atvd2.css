@@ -66,6 +66,8 @@
     width: 300px;
     left: 7%;
     position: absolute;
+    overflow-y: scroll;
+    resize: none;
 
 }
 
@@ -74,7 +76,6 @@
     width: 300px;
     left: 7%;
     position: absolute;
-
 }
 
 #mod{
