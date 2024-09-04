@@ -1,0 +1,325 @@
+#titulo{
+    top: 2%;
+    width: 600px;
+    height: 38px;
+    background-color: rgb(105, 190, 247);
+    position: absolute;
+    
+}
+#titulo2{
+    top: 2%;
+    left: 32%;
+    width: 400px;
+    height: 38px;
+    background-color: rgb(3, 3, 196);
+    position: absolute;
+
+}
+
+#nome{
+    top: 6%;
+    width: 300px;
+    left: 1%;
+    position: absolute;
+
+}
+
+#i1{
+    top: 7%;
+    width: 500px;
+    left: 7%;
+    position: absolute;
+}
+
+#nomeC{
+    top: 9%;
+    width: 300px;
+    left: 1%;
+    position: absolute;
+
+}
+
+#i2{
+    top: 11%;
+    width: 500px;
+    left: 7%;
+    position: absolute;
+}
+
+#cpf{
+    top: 14%;
+    width: 300px;
+    left: 1%;
+    position: absolute;
+
+}
+
+#i3{
+    top: 15%;
+    width: 500px;
+    left: 7%;
+    position: absolute;
+}
+
+#email{
+    top: 17%;
+    width: 300px;
+    left: 1%;
+    position: absolute;
+
+}
+
+#i4{
+    top: 19%;
+    width: 500px;
+    left: 7%;
+    position: absolute;
+}
+
+#webS{
+    top: 21%;
+    width: 300px;
+    left: 1%;
+    position: absolute;
+
+}
+
+#i5{
+    top: 23%;
+    width: 500px;
+    left: 7%;
+    position: absolute;
+}
+
+#end{
+    top: 25%;
+    width: 300px;
+    left: 1%;
+    position: absolute;
+
+}
+
+#i6{
+    top: 27%;
+    width: 500px;
+    left: 7%;
+    position: absolute;
+}
+
+#bairro{
+    top: 29%;
+    width: 300px;
+    left: 1%;
+    position: absolute;
+
+}
+
+#i7{
+    top: 31%;
+    width: 500px;
+    left: 7%;
+    position: absolute;
+}
+
+#cdd{
+    top: 29%;
+    width: 300px;
+    left: 25%;
+    position: absolute;
+
+}
+
+#i8{
+    top: 31%;
+    width: 500px;
+    left: 29%;
+    position: absolute;
+}
+
+#cep{
+    top: 33%;
+    width: 300px;
+    left: 1%;
+    position: absolute;
+
+}
+
+#i9{
+    top: 35%;
+    width: 500px;
+    left: 7%;
+    position: absolute;
+}
+
+#uf{
+    top: 33%;
+    width: 300px;
+    left: 25%;
+    position: absolute;
+}
+
+#i10{
+    top: 35%;
+    width: 300px;
+    left: 25%;
+    position: absolute;
+
+}
+
+#telefone{
+    top: 37%;
+    width: 300px;
+    left: 1%;
+    position: absolute;
+}
+
+#i11{
+    top: 39%;
+    width: 300px;
+    left: 7%;
+    position: absolute;
+
+}
+
+#fax{
+    top: 38%;
+    width: 300px;
+    left: 25%;
+    position: absolute;
+}
+
+#i12{
+    top: 39%;
+    width: 300px;
+    left: 29%;
+    position: absolute;
+
+}
+
+#dtN{
+    top: 41%;
+    width: 300px;
+    left: 1%;
+    position: absolute;
+}
+
+#i13{
+    top: 43%;
+    width: 300px;
+    left: 7%;
+    position: absolute;
+
+}
+
+#sx{
+    top: 42%;
+    width: 300px;
+    left: 25%;
+    position: absolute;
+}
+
+#i14{
+    top: 43%;
+    width: 300px;
+    left: 29%;
+    position: absolute;
+
+}
+
+#cll{
+    top: 46%;
+    width: 300px;
+    left: 1%;
+    position: absolute;
+}
+
+#i15{
+    top: 47%;
+    width: 300px;
+    left: 7%;
+    position: absolute;
+
+}
+
+#esC{
+    top: 46%;
+    width: 300px;
+    left: 25%;
+    position: absolute;
+}
+
+#i16{
+    top: 47%;
+    width: 300px;
+    left: 25%;
+    position: absolute;
+
+}
+
+#log{
+    top: 50%;
+    width: 300px;
+    left: 1%;
+    position: absolute;
+
+}
+
+#i17{
+    top: 51%;
+    width: 300px;
+    left: 7%;
+    position: absolute;
+
+}
+
+#sen{
+    top: 50%;
+    width: 300px;
+    left: 25%;
+    position: absolute;
+
+}
+
+#i18{
+    top: 51%;
+    width: 300px;
+    left: 29%;
+    position: absolute;
+
+}
+
+#texto{ 
+    top: 53%;
+    width: 500px;
+    left: 1%;
+    position: absolute;
+}
+
+#i19{
+    top: 58%;
+    width: 800px;
+    left: 1%;
+    position: absolute;
+}
+
+#i20{
+    top: 61%;
+    width: 800px;
+    left: 1%;
+    position: absolute;
+
+}
+#i21{
+    top: 64%;
+    width: 800px;
+    left: 1%;
+    position: absolute;
+
+}
+
+#i22{
+    top: 67%;
+    left: 1%;
+    position: absolute;
+
+}
