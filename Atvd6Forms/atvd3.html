@@ -1,18 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>atvd3</title>
+    <title>Cadastro Geral</title>
     <link rel="stylesheet" href="atvd3.css">
 </head>
 <body>
-    <div id="quadradoPrincipal">
-        <div id="segundoQuadrado"></div>
-        <div id="terceiroQuadrado"></div>
-        <div id="q1"></div>
-            
-    </div>
     
+    <div class="form-container">
+        <h1>Cadastro Geral</h1>
+        <form action="#" method="post">
+            <div id="i1">
+            <fieldset class="section">
+                <legend>Dados pessoais</legend>
+                <label for="nome">Nome completo:</label>
+                <input type="text" id="nome" name="nome">
+                <label for="profissao">Sua profissão:</label>
+                <input type="text" id="profissao" name="profissao">
+            </div>
+                
+            </fieldset>
+            
+            <div id="i2">
+            <fieldset class="section">
+                <legend>Localização</legend>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email">
+                <label for="rua">Rua:</label>
+                <input type="text" id="rua" name="rua">
+            </fieldset>
+        </div>
+
+        <div id="i3">
+
+            <fieldset class="section age-group">
+                <legend>Faixa etária</legend>
+                <label><input type="radio" name="faixa_etaria" value="0-20"> até 20 anos</label>
+                <label><input type="radio" name="faixa_etaria" value="21-30"> mais de 20 até 30 anos</label>
+                <label><input type="radio" name="faixa_etaria" value="31-40"> mais de 30 até 40 anos</label>
+                <label><input type="radio" name="faixa_etaria" value="41-50"> mais de 40 até 50 anos</label>
+                <label><input type="radio" name="faixa_etaria" value="51-60"> mais de 50 até 60 anos</label>
+                <label><input type="radio" name="faixa_etaria" value="60+"> mais de 60 anos</label>
+            </fieldset>
+        </div>
+
+        <div id="i4">
+
+            <fieldset class="section sports-preferences">
+                <legend>Preferências de esporte</legend>
+                <label><input type="checkbox" name="esportes" value="futebol_campo"> Futebol de campo</label>
+                <label><input type="checkbox" name="esportes" value="futebol_salao"> Futebol de salão</label>
+                <label><input type="checkbox" name="esportes" value="futebol_society"> Futebol society</label>
+                <label><input type="checkbox" name="esportes" value="volei_quadra"> Vôlei de quadra</label>
+                <label><input type="checkbox" name="esportes" value="volei_praia"> Vôlei de praia</label>
+                <label><input type="checkbox" name="esportes" value="natacao_piscina"> Natação em piscina</label>
+                <label><input type="checkbox" name="esportes" value="natacao_mar"> Natação em mar aberto</label>
+            </fieldset>
+
+        </div>
+        <div id="i5">
+            <div class="message-box">
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem"></textarea>
+            </div>
+        </div>
+        <div id="i6">
+            <div class="form-buttons">
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpar</button>
+            </div>
+        </div>    </form>
+    </div>
 </body>
 </html>
