@@ -8,7 +8,7 @@ body {
 
 .form-container {
     border: 1px solid green;
-    height: 1150px;
+    height: 1000px;
     width: 1300px;
     top: 50%;
     left: 50%;
@@ -16,6 +16,21 @@ body {
     background-color:rgba(241, 250, 241, 1);
 
 }
+.form-container1 {
+    border: 1px solid green;
+    height: 950px;
+    width: 1200px;
+    top: 50%;
+    left: 50%;
+    margin: 0 auto;
+    background-color:rgba(241, 250, 241, 1);
+
+}
+
+fieldset.section{
+    width: 1075px;
+}
+
 
 h1 {
     text-align: center;
@@ -29,6 +44,10 @@ h1 {
 }
 
 .section{
+    width: 500px;
+
+}
+.section1{
     width: 500px;
 
 }
@@ -93,10 +112,10 @@ button:hover {
 }
 
 #i3{
-    width: 800px;
     top: 30%;
     left: 23%;
     position: absolute;
+
 
  }
 
@@ -109,9 +128,15 @@ button:hover {
  }
 
 #i5{
-    width: 800px;
+    width: 1082px;
     top: 75%;
     left: 23%;
     position: absolute;
 
  }
+#i6{
+    width: 1075px;
+    top: 90%;
+    left: 23%;
+    position: absolute;
+}
