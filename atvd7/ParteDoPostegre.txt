@@ -8,10 +8,12 @@ create table Contatos(
 	
 );
 
+
+	
 create table Usuario(
 
 	id serial primary key,
-	nomeUsuario varchar(50),
+	nomeUsuario varchar(50) UNIQUE,
 	senha varchar(50),
 	email varchar(50),
 	login varchar(50),
@@ -19,6 +21,8 @@ create table Usuario(
 );
 
 Select * from Contatos
+
+UPDATE Contatos SET nome= 'larissaBeato', endereco='rua' where id=1;
 
 Select * from Usuario
 
