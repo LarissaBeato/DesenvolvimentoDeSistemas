@@ -1,5 +1,63 @@
 <html>
 
+<style>
+    body {
+    background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+ {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #E0FFFF;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #000;
+    color:white;
+}
+
+#botao{
+    width: 150px;
+}
+
+</style>
+
 <body>
 
 <form method="post" action="contatosInsert.php">
@@ -15,12 +73,20 @@
     <label for="celular">Celular:</label><br>
     <input type="text" id="celular" name="celular" required><br>
    
-    <button type="submit" name ="Entrar">Enviar</button>
-
+    <button type="submit" id="botaoEnviar" name ="Entrar">Enviar</button>
 
 </div>
 
 </form> 
+
+<form action ="AgendaContatosSelect.php" method="post">
+    <table>
+        <tr>
+            <td colspan="2"><button id="botao" type="submit" name="voltar">Voltar</button>
+        </tr>
+    </table>
+</form>
+
 </body>
 
 </html>
@@ -49,6 +115,5 @@ if(isset($_POST["Entrar"]))
 }
 
     unset($_POST["Entrar"],$_POST["nome"],$_POST["endereco"],$_POST["email"],$_POST["telefone"],$_POST["celular"]);
-
 
 ?>

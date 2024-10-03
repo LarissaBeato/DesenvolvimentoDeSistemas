@@ -1,6 +1,3 @@
-
-
-
 <html>
 <style>
 
@@ -10,7 +7,6 @@
     left: 50%;
     border-radius:50%;
 }
-
 
 </style>
 
@@ -60,8 +56,5 @@ if(isset($_POST["Entrar"]))
         echo "erro ao cadastrar";
     }
 }
-    
-
-
 
 ?>

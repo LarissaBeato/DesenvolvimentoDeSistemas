@@ -5,18 +5,87 @@
 
 <html>
 
+    <style>
+
+body {
+    background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #E0FFFF;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #000;
+    color:white;
+}
+
+    </style>
+
 <body>
 <form method="post" action="login.php">
-    <label for="name">Nome:</label><br>
-    <input type="name" id="name" name="name" required ><br>
-    <label for="password">Senha:</label><br>
-    <input type="password" id="password" name="password" required>
-   
+
+    <div class = "container">
+        <div class="input-group">
+            <label for="name">Nome:</label><br>
+            <input type="text" id="name" name="name" required ><br>
+        </div>
+
+        <div class="input-group">
+            <label for="password">Senha:</label><br>
+            <input type="password" id="password" name="password" required>
+        </div>
+
     <button type="submit" name ="Entrar">Entrar</button>
+</div>
 
 </form> 
 
 </body>
+
 </html>
 
 <?php

@@ -15,15 +15,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda</title>
+    <style>
+    
+    body {
+    background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tabela th, .tabela td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.tabela th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.tabela tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tabela tr:hover {
+    background-color: #ddd;
+}
+
+#botao{
+    width: 90px ;
+    height: 40px;
+
+}
+
+#botao:hover{
+    color: black;
+
+}
+    
+        </style>
 </head>
 <body>
 
     <form action="AgendaContatosSelect.php" method="post">
         <table>
-            
-        <tr>
-        <td colspan="2"><button id="botao" type="submit" name="buscar">Procurar</button></td>
-        </tr>    
+
+        <form action ="AgendaContatosSelect.php" method="post">
+            <table>
+                <tr>
+                    <td colspan="2"><button id="botao" type="submit" name="buscar">Procurar</button>
+                </tr>
+            </table>
+        </form>
+        
+        <form action ="contatosInsert.php" method="post">
+            <table>
+                <tr>
+                    <td colspan="2"><button id="botao" name="Cadastrar">Cadastro</button>
+                </tr>
+            </table>
+        </form>  
+        
     </table>
         
     </form>
@@ -55,7 +116,7 @@
 
             $i = 0;
             echo '
-            <table>
+            <table class="tabela">
                     <tr>
                         <td>Nome</td>
                         <td>Endereco</td>
