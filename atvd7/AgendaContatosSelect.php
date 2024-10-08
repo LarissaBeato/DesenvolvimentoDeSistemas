@@ -1,151 +1,168 @@
 <?php
-    session_name('iniciar');
-    session_start();
-
-    if($_SESSION['cadastro']==FALSE)
-    {
-        session_destroy();
-        header("location: login.php");
-    }
-
-   ?> 
+session_name('iniciar');
+session_start();
+?> 
 
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda</title>
+    
     <style>
-    
-    body {
-    background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
 
-.tabela {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fff; 
+            border-radius: 5px; 
+            overflow: hidden; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-.tabela th, .tabela td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
 
-.tabela th {
-    background-color: #4CAF50;
-    color: white;
-}
+        th {
+            background-color: #E0FFFF;
+        }
 
-.tabela tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
+        tr:hover {
+            background-color: #f5f5f5;
+        }
 
-.tabela tr:hover {
-    background-color: #ddd;
-}
+        button {
+            background-color: #E0FFFF;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px; 
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-#botao{
-    width: 90px ;
-    height: 40px;
+        button:hover {
+            background-color: black;
+            color: #fff;
+        }
 
-}
+        a {
+            text-decoration: none;
+        }
 
-#botao:hover{
-    color: black;
-
-}
-    
-        </style>
+        #botao {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
 
     <form action="AgendaContatosSelect.php" method="post">
         <table>
-
-        <form action ="AgendaContatosSelect.php" method="post">
-            <table>
-                <tr>
-                    <td colspan="2"><button id="botao" type="submit" name="buscar">Procurar</button>
-                </tr>
-            </table>
-        </form>
-        
-        <form action ="contatosInsert.php" method="post">
-            <table>
-                <tr>
-                    <td colspan="2"><button id="botao" name="Cadastrar">Cadastro</button>
-                </tr>
-            </table>
-        </form>  
-        
-    </table>
-        
+            <tr>
+                <td colspan="2"><button id="botao" type="submit" name="buscar">Procurar</button></td>
+            </tr>
+        </table>
     </form>
-</body>
-</html>
+        
+    <form action="contatosInsert.php" method="post">
+        <table>
+            <tr>
+                <td colspan="2"><button id="botao" name="Cadastrar">Cadastro</button></td>
+            </tr>
+        </table>
+    </form>
+        
+    <form action="AgendaContatosSelect.php" method="post">
+        <table>
+            <tr>
+                <td colspan="2"><button id="botao" type="submit" name="voltar">Voltar</button></td>
+            </tr>
+        </table>
+    </form>
 
-<?php
+    <table>
+        <tr>
+            <td colspan="2"><a href="login.php"><button id="botao" type="button" name="sair">Sair</button></a></td>
+        </tr>
+    </table>
 
-    extract ($_POST);
-    
-    if(isset($_POST["buscar"]))
-    {
+    <form action="" method="post">
+    <?php
+    extract($_POST);
+    if (isset($_POST["buscar"])) {
         include_once("conect.php");
         $obj = new conect();
         $resultado = $obj->conectarBanco();
 
-        $sql = "SELECT Nome, endereco, telefone, email, celular, id FROM Contatos;";
-        $indice = 0;
-
+        $sql = "SELECT nome, endereco, telefone, email, celular, id FROM Contatos;";
         $executado = $resultado->prepare($sql);
 
-        if($executado->execute())
-        {
-            while($linha = $executado->fetch(PDO::FETCH_ASSOC))
-            {
-                $linhas[$indice] = $linha;
-                $indice++;
-            }
-
-            $i = 0;
+        if ($executado->execute()) {
             echo '
-            <table class="tabela">
-                    <tr>
-                        <td>Nome</td>
-                        <td>Endereco</td>
-                        <td>Telefone</td>
-                        <td>Email</td>
-                        <td>Celular</td>
-                        <td>id</td>
-                    </tr>';
-            while($i < $indice)
-            {
-            echo '
-                
-                    <tr>
-                        <td>'.$linhas[$i]['nome'].'</td>
-                        <td>'.$linhas[$i]['endereco'].'</td>
-                        <td>'.$linhas[$i]['telefone'].'</td>
-                        <td>'.$linhas[$i]['email'].'</td>
-                        <td>'.$linhas[$i]['celular'].'</td> 
-                        <td>'.$linhas[$i]['id'].'</td> 
-                           
-                    </tr>
-            ';
-            $i++;
+            <table>
+                <tr>
+                    <th>Nome</th>
+                    <th>Endereco</th>
+                    <th>Telefone</th>
+                    <th>Email</th>
+                    <th>Celular</th>
+                    <th>id</th>
+                    <th>Ações</th>
+                </tr>';
+            
+            while ($linha = $executado->fetch(PDO::FETCH_ASSOC)) {
+                echo '
+                <tr>
+                    <td>'.$linha['nome'].'</td>
+                    <td>'.$linha['endereco'].'</td>
+                    <td>'.$linha['telefone'].'</td>
+                    <td>'.$linha['email'].'</td>
+                    <td>'.$linha['celular'].'</td>
+                    <td>'.$linha['id'].'</td>
+                    <td>
+                        <a href="ContatosUpdate.php?id='.$linha['id'].'"><button type="button">Atualizar</button></a>
+                        <form action="contatosAgendaDelete.php" method="post" style="display:inline;">
+                            <input type="hidden" name="deletar_id" value="'.$linha['id'].'">
+                            <button type="submit" onclick="return confirm(\'Tem certeza que deseja deletar este contato?\');">Deletar</button>
+                        </form>
+                    </td>
+                </tr>';
             }
             echo '</table>';
-        }
-        else
-        {
-            echo "Deu errado";
+        } else {
+            echo "Erro ao carregar os contatos.";
         }
     }
-?>
+
+    if (isset($_POST['deletar_id'])) {
+        include_once("connect.php");
+        $obj = new connect();
+        $resultado = $obj->conectarBanco();
+
+        $deletar_id = $_POST['deletar_id'];
+        $sql_delete = "DELETE FROM contatos WHERE id = :id";
+        $stmt = $resultado->prepare($sql_delete);
+        $stmt->bindParam(':id', $deletar_id, PDO::PARAM_INT);
+        if ($stmt->execute()) {
+            echo "Contato deletado com sucesso.";
+        } else {
+            echo "Erro ao deletar o contato.";
+        }
+    }
+    ?>
+    </form>
+
+</body>
+</html>

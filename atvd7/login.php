@@ -4,9 +4,8 @@
 ?>
 
 <html>
-
-    <style>
-
+    
+<style>
 body {
     background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
     display: flex;
@@ -43,7 +42,6 @@ input[type="password"] {
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
-    transition: border 0.3s;
 }
 
 button {
@@ -56,22 +54,22 @@ button {
     font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s;
+    
 }
 
 button:hover {
     background-color: #000;
-    color:white;
+    color: white;
 }
-
-    </style>
+</style>
 
 <body>
 <form method="post" action="login.php">
 
-    <div class = "container">
+    <div class="container">
         <div class="input-group">
             <label for="name">Nome:</label><br>
-            <input type="text" id="name" name="name" required ><br>
+            <input type="text" id="name" name="name" required><br>
         </div>
 
         <div class="input-group">
@@ -79,49 +77,41 @@ button:hover {
             <input type="password" id="password" name="password" required>
         </div>
 
-    <button type="submit" name ="Entrar">Entrar</button>
-</div>
+        <button type="submit" name="Entrar">Entrar</button>
+        <button id="botao" type="button" onclick="window.location.href='usuarioInsert.php'">Cadastrar</button>
+    </div>
 
 </form> 
 
 </body>
-
 </html>
 
 <?php
     extract($_POST);
 
-    if(isset($_POST["Entrar"]))
-    {
+    if (isset($_POST["Entrar"])) {
         include_once("conect.php");
         $obj = new conect();
         $resultado = $obj->conectarBanco();
         
-
         $sql = "SELECT nomeUsuario, senha FROM Usuario WHERE nomeUsuario = '".$_POST["name"]."' AND senha = '".md5($_POST["password"])."';";
         $query = $resultado->prepare($sql);
         
         $indice = 0;
         
-        if($query->execute())
-        {
-            while($linha = $query->fetch(PDO::FETCH_ASSOC))
-            {
+        if ($query->execute()) {
+            while ($linha = $query->fetch(PDO::FETCH_ASSOC)) {
                 $linhas[$indice] = $linha;
                 $indice++;
             }
-            if($indice == 1)
-            {
+            if ($indice == 1) {
                 $_SESSION["cadastro"] = TRUE;
                 header("location: AgendaContatosSelect.php");
-            }
-            else
-            {
+            } else {
                 echo "Usuário e senha não existem, verifique!";
             }
         }
     }
 
-    unset($sql,$query);
+    unset($sql, $query);
 ?>
-
