@@ -81,13 +81,9 @@
         <input type="text" name="senha" placeholder="senha" required>
         <input type="email" name="email" placeholder="Email" required>
         <input type="text" name="login" placeholder="login" required>
-        <input type="text" name="id" placeholder="id" required>
         <button type="submit" name="update_contato">Atualizar Usuario</button>
-        
-        <!-- Botão Voltar -->
-        <a href="AgendaContatosSelect.php">
-            <button id="voltar" type="button" name="voltar">Voltar</button>
-        </a>
+        <a href="AgendaUsuariosSelect.php"><button type="button" name="voltar">Voltar</button></a>
+
     </form>
 </body>
 </html>

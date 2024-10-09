@@ -147,12 +147,12 @@ session_start();
     }
 
     if (isset($_POST['deletar_id'])) {
-        include_once("connect.php");
-        $obj = new connect();
+        include_once("conect.php");
+        $obj = new conect();
         $resultado = $obj->conectarBanco();
 
         $deletar_id = $_POST['deletar_id'];
-        $sql_delete = "DELETE FROM contatos WHERE id = :id";
+        $sql_delete = "DELETE FROM Contatos WHERE id = :id";
         $stmt = $resultado->prepare($sql_delete);
         $stmt->bindParam(':id', $deletar_id, PDO::PARAM_INT);
         if ($stmt->execute()) {

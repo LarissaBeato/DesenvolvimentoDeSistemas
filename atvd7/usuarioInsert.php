@@ -126,7 +126,7 @@ if (isset($_POST["enviar"])) {
 
     $query = $resultado->prepare($sql);
     if ($query->execute()) {
-        echo '<script>window.location.href="contatosInsert.php";</script>';
+        echo 'Usuario Cadastrado';
     } else {
         echo "Erro ao cadastrar";
     }

@@ -59,3 +59,7 @@ Select * from Contatos where nome like 'Z%';
 Insert Into Contatos(nome, endereço, telefone, email, celular)Values('Larissa','Jose Cleto 305','(46)999799398','larissabonkoskibeato@gmail.com','(46)999799398');
 
 Insert Into Usuarios(nomeUsuario, senha, email, login, ativo)Values('LarissaBeato','123','larissabnkoskibeato@gmail.com','usuario1','true');
+
+delete from Contatos where nome = 'Larissa'
+
+delete from Usuarios where nomeUsuario = 'LarisaBeato'

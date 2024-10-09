@@ -61,6 +61,20 @@ button:hover {
     background-color: #000;
     color: white;
 }
+.link{
+    display: inline-block;
+    margin-top: 10px;
+    float: right;
+    font-size: 14px;
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s;
+
+}
+.link:hover {
+    color: #000;
+}
+
 </style>
 
 <body>
@@ -80,6 +94,7 @@ button:hover {
         <button type="submit" name="Entrar">Entrar</button>
         <button id="botao" type="button" onclick="window.location.href='usuarioInsert.php'">Cadastrar</button>
     </div>
+    <a class = "link" href = "AgendaUsuariosSelect.php">Pag. Usuarios</a>
 
 </form> 
 
