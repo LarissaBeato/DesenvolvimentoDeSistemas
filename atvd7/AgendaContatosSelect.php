@@ -1,6 +1,12 @@
 <?php
 session_name('iniciar');
 session_start();
+
+if ($_SESSION['cadastro'] == FALSE) {
+    session_destroy();
+    header("location: login.php");
+    exit();
+}
 ?> 
 
 <html lang="pt-br">
@@ -61,6 +67,23 @@ session_start();
             text-decoration: none;
         }
 
+        .pesquisa {
+            margin: 20px 0;
+        }
+
+        .pesquisa input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-right: 10px;
+            width: calc(100% - 130px); /* Ajusta com base na largura do botão */
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .pesquisa button {
+            padding: 10px 15px;
+        }
+
         #botao {
             margin-top: 10px;
         }
@@ -69,9 +92,13 @@ session_start();
 <body>
 
     <form action="AgendaContatosSelect.php" method="post">
+        <div class="pesquisa">
+            <input type="text" id="letra" name="letra" placeholder="Digite o nome...">
+            <button id="botao1" type="submit" name="buscar">Buscar</button>
+        </div>
         <table>
             <tr>
-                <td colspan="2"><button id="botao" type="submit" name="buscar">Procurar</button></td>
+                <td colspan="2"><button id="botao" type="submit" name="procurar">Procurar</button></td>
             </tr>
         </table>
     </form>
@@ -99,14 +126,16 @@ session_start();
     </table>
 
     <form action="" method="post">
+        
     <?php
     extract($_POST);
+    
     if (isset($_POST["buscar"])) {
         include_once("conect.php");
         $obj = new conect();
         $resultado = $obj->conectarBanco();
 
-        $sql = "SELECT nome, endereco, telefone, email, celular, id FROM Contatos;";
+        $sql = "SELECT nome, endereco, telefone, email, celular, id FROM Contatos WHERE nome like lower('".$_POST["letra"]."%') AND Contatos_idfk = ".$_SESSION["id"].";";
         $executado = $resultado->prepare($sql);
 
         if ($executado->execute()) {
@@ -161,7 +190,51 @@ session_start();
             echo "Erro ao deletar o contato.";
         }
     }
+
+    if (isset($_POST["procurar"])) {
+        include_once("conect.php");
+        $obj = new conect();
+        $resultado = $obj->conectarBanco();
+
+        $sql = "SELECT nome, endereco, telefone, email, celular, id FROM Contatos WHERE Contatos_idfk = ".$_SESSION["id"].";";
+        $executado = $resultado->prepare($sql);
+
+        if ($executado->execute()) {
+            echo '
+            <table>
+                <tr>
+                    <th>Nome</th>
+                    <th>Endereco</th>
+                    <th>Telefone</th>
+                    <th>Email</th>
+                    <th>Celular</th>
+                    <th>id</th>
+                    <th>Ações</th>
+                </tr>';
+            
+            while ($linha = $executado->fetch(PDO::FETCH_ASSOC)) {
+                echo '
+                <tr>
+                    <td>'.$linha['nome'].'</td>
+                    <td>'.$linha['endereco'].'</td>
+                    <td>'.$linha['telefone'].'</td>
+                    <td>'.$linha['email'].'</td>
+                    <td>'.$linha['celular'].'</td>
+                    <td>'.$linha['id'].'</td>
+                    <td>
+                        <a href="ContatosUpdate.php?id='.$linha['id'].'"><button type="button">Atualizar</button></a>
+                        <form action="contatosAgendaDelete.php" method="post" style="display:inline;">
+                            <input type="hidden" name="deletar_id" value="'.$linha['id'].'">
+                            <button type="submit" onclick="return confirm(\'Tem certeza que deseja deletar este contato?\');">Deletar</button>
+                        </form>
+                    </td>
+                </tr>';
+            }
+            echo '</table>';
+        } 
+    }
     ?>
+    
     </form>
 
 </body>

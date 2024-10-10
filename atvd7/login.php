@@ -109,7 +109,7 @@ button:hover {
         $obj = new conect();
         $resultado = $obj->conectarBanco();
         
-        $sql = "SELECT nomeUsuario, senha FROM Usuario WHERE nomeUsuario = '".$_POST["name"]."' AND senha = '".md5($_POST["password"])."';";
+        $sql = "SELECT id,nomeUsuario, senha FROM Usuario WHERE nomeUsuario = '".$_POST["name"]."' AND senha = '".md5($_POST["password"])."';";
         $query = $resultado->prepare($sql);
         
         $indice = 0;
@@ -121,6 +121,7 @@ button:hover {
             }
             if ($indice == 1) {
                 $_SESSION["cadastro"] = TRUE;
+                $_SESSION["id"] = $linhas[0]["id"];
                 header("location: AgendaContatosSelect.php");
             } else {
                 echo "Usuário e senha não existem, verifique!";

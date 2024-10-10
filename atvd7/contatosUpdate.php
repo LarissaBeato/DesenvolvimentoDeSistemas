@@ -96,30 +96,33 @@
 </body>
 </html>
 <?php
-    include_once("conect.php");
+include_once("conect.php");
 
-    $obj = new conect();
-    $resultado = $obj->conectarBanco();
+$obj = new conect();
+$resultado = $obj->conectarBanco();
 
-    if (isset($_POST['update_contato'])) {
-        $id = $_POST['id'];
-        $nome = $_POST['nome'];
-        $endereco = $_POST['endereco'];
-        $telefone = $_POST['telefone'];
-        $email = $_POST['email'];
-        $celular = $_POST['celular'];
+if (isset($_POST['update_contato'])) {
+    $id = $_POST['id'];
+    $nome = $_POST['nome'];
+    $endereco = $_POST['endereco'];
+    $telefone = $_POST['telefone'];
+    $email = $_POST['email'];
+    $celular = $_POST['celular'];
 
-        $sql = "UPDATE Contatos SET nome=:nome, endereco=:endereco, telefone=:telefone, email=:email, celular=:celular WHERE id=:id";
-        $executado = $resultado->prepare($sql);
+    $sql = "UPDATE Contatos SET nome=:nome, endereco=:endereco, telefone=:telefone, email=:email, celular=:celular WHERE id=:id";
+    $executado = $resultado->prepare($sql);
 
-        $executado->bindParam(':nome', $nome);
-        $executado->bindParam(':endereco', $endereco);
-        $executado->bindParam(':telefone', $telefone);
-        $executado->bindParam(':email', $email);
-        $executado->bindParam(':celular', $celular);
-        $executado->bindParam(':id', $id);
+    $executado->bindParam(':nome', $nome);
+    $executado->bindParam(':endereco', $endereco);
+    $executado->bindParam(':telefone', $telefone);
+    $executado->bindParam(':email', $email);
+    $executado->bindParam(':celular', $celular);
+    $executado->bindParam(':id', $id);
 
-        $executado->execute();
-
+    if ($executado->execute()) {
+        echo "<script>alert('Contato atualizado com sucesso!');</script>";
+    } else {
+        echo "<script>alert('Erro ao atualizar contato.');</script>";
     }
+}
 ?>

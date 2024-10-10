@@ -1,5 +1,19 @@
-<html>
+<?php
+    session_name('iniciar');
+    session_start();
 
+    if ($_SESSION['cadastro'] == FALSE) {
+        session_destroy();
+        header("location: login.php");
+        exit();
+    }
+?>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Contatos</title>
 <style>
     body {
         background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
@@ -61,7 +75,7 @@
         background-color: #000;
     }
 </style>
-
+</head>
 <body>
 
 <div class="container">
@@ -81,11 +95,9 @@
         <label for="celular">Celular:</label>
         <input type="text" id="celular" name="celular" required>
 
-        <!-- Botão Enviar -->
         <button type="submit" id="botaoEnviar" name="Entrar">Enviar</button>
     </form>
 
-    <!-- Botão Voltar abaixo do Enviar -->
     <form action="AgendaContatosSelect.php" method="post">
         <button id="botaoVoltar" type="submit" name="voltar">Voltar</button>
     </form>
@@ -105,7 +117,7 @@ if(isset($_POST["Entrar"]))
     $obj = new conect();
     $resultado = $obj->conectarBanco();
 
-    $sql = "insert into Contatos (nome,endereco,email,telefone,celular) values ('".$_POST["name"]."','".$_POST["endereco"]."','".$_POST["email"]."','".$_POST["telefone"]."','".$_POST["celular"]."');";
+    $sql = "insert into Contatos (nome,endereco,email,telefone,celular,contatos_idfk) values ('".$_POST["name"]."','".$_POST["endereco"]."','".$_POST["email"]."','".$_POST["telefone"]."','".$_POST["celular"]."',".$_SESSION["id"]." );";
 
     $query = $resultado->prepare($sql);
     $indice = 0;

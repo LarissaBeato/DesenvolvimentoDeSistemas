@@ -1,6 +1,12 @@
 <?php
 session_name('iniciar');
 session_start();
+
+if ($_SESSION['cadastro'] == FALSE) {
+    session_destroy();
+    header("location: login.php");
+    exit();
+}
 ?>
 
 <html lang="pt-br">
@@ -92,8 +98,8 @@ session_start();
         </table>
     </form>
 
-
-
+    <form action="" method="post">
+        
     <?php
     extract($_POST);
 
@@ -102,18 +108,10 @@ session_start();
         $obj = new conect();
         $resultado = $obj->conectarBanco();
 
-        $sql = "SELECT nomeusuario, senha, email, login, ativo, id FROM Usuario;";
-        $indice = 0;
-
+        $sql = "SELECT nomeusuario, senha, email, login, ativo, id FROM Usuario ;";
         $executado = $resultado->prepare($sql);
 
         if ($executado->execute()) {
-            $linhas = array();
-            while ($linha = $executado->fetch(PDO::FETCH_ASSOC)) {
-                $linhas[$indice] = $linha;
-                $indice++;
-            }
-
             echo '
             <table>
                 <tr>
@@ -126,19 +124,19 @@ session_start();
                     <th>Ações</th>
                 </tr>';
             
-            for ($i = 0; $i < $indice; $i++) {
+            while ($linha = $executado->fetch(PDO::FETCH_ASSOC)) {
                 echo '
                 <tr>
-                    <td>'.$linhas[$i]['nomeusuario'].'</td>
-                    <td>'.$linhas[$i]['senha'].'</td>
-                    <td>'.$linhas[$i]['email'].'</td>
-                    <td>'.$linhas[$i]['login'].'</td>
-                    <td>'.$linhas[$i]['ativo'].'</td>
-                    <td>'.$linhas[$i]['id'].'</td>
+                    <td>'.$linha['nomeusuario'].'</td>
+                    <td>'.$linha['senha'].'</td>
+                    <td>'.$linha['email'].'</td>
+                    <td>'.$linha['login'].'</td>
+                    <td>'.$linha['ativo'].'</td>
+                    <td>'.$linha['id'].'</td>
                     <td>
-                        <a href="UsuarioUpdate.php?id='.$linhas[$i]['id'].'"><button type="button">Atualizar</button></a>
+                        <a href="UsuarioUpdate.php?id='.$linha['id'].'"><button type="button">Atualizar</button></a>
                         <form action="usuarioDelete.php" method="post" style="display:inline;">
-                            <input type="hidden" name="deletar_id" value="'.$linhas[$i]['id'].'">
+                            <input type="hidden" name="deletar_id" value="'.$linha['id'].'">
                             <button type="submit" onclick="return confirm(\'Tem certeza que deseja deletar este usuário?\');">Deletar</button>
                         </form>
                     </td>
@@ -159,6 +157,7 @@ session_start();
         $sql_delete = "DELETE FROM Usuario WHERE id = :id";
         $stmt = $resultado->prepare($sql_delete);
         $stmt->bindParam(':id', $deletar_id, PDO::PARAM_INT);
+        
         if ($stmt->execute()) {
             echo "Usuário deletado com sucesso.";
         } else {
@@ -166,5 +165,6 @@ session_start();
         }
     }
     ?>
+    </form>
 </body>
 </html>

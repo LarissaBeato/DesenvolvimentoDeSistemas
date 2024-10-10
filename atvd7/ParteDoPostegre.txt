@@ -4,7 +4,8 @@ create table Contatos(
 	endereco varchar(50),
 	telefone varchar(20),
 	email varchar(50),
-	celular varchar(20)
+	celular varchar(20),
+	contatos_idfk int, FOREIGN KEY (contatos_idfk) references Usuario (id) 
 	
 );
 
@@ -63,3 +64,5 @@ Insert Into Usuarios(nomeUsuario, senha, email, login, ativo)Values('LarissaBeat
 delete from Contatos where nome = 'Larissa'
 
 delete from Usuarios where nomeUsuario = 'LarisaBeato'
+
+SELECT nome, endereco, telefone, email, celular, id, Contatos_idfk FROM Contatos WHERE nome like 'J%' AND  Contatos_idfk = 1; 
